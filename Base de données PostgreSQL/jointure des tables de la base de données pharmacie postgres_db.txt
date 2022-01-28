@@ -1,0 +1,219 @@
+#####La jointure des tables pour ma base de données pharmacie
+
+            INNER JOIN
+
+SELECT *
+FROM A
+INNER JOIN B ON A.key = B.key
+
+SELECT *
+FROM Medicaments
+INNER JOIN Magasin ON Medicaments.id = Magasin.id_medicament;
+
+
+
+ id |    nom     |                   type                    | date_peremption | id  |      nom      |                                                                description                                                                | id_medicament 
+----+------------+-------------------------------------------+-----------------+-----+---------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |   1 | la belle lune | ouvert a tout public                                                                                                                      |             2
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |   2 | univers       | ouvert a tout public                                                                                                                      |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      |   3 | la belle lune | ouvert a tout public                                                                                                                      |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |   4 | la belle lune | ouvert 24h/24                                                                                                                             |             5
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  14 | Gilemette     | lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at                                    |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      |  96 | Trev          | id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque    |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  88 | Cornelle      | hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum    |             5
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  59 | Ninnette      | a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie                               |             2
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  25 | Lotti         | ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam                                                           |             5
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  18 | Kendra        | primis in faucibus orci luctus et ultrices posuere cubilia curae                                                                          |             3
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  29 | Wheeler       | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat            |             2
+  1 | fervex     | medicament por le rhume                   | 2022-01-09      |  32 | Valenka       | consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat                                          |             1
+  1 | fervex     | medicament por le rhume                   | 2022-01-09      |  19 | Ailis         | pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate             |             1
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  43 | Gaylord       | nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices                                      |             2
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  45 | Duky          | justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam                   |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      | 100 | Cristi        | lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede                                                 |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  38 | Thorin        | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum |             5
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  74 | Clair         | lorem quisque ut erat curabitur gravida nisi at nibh in hac                                                                               |             5
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  46 | Prentiss      | at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam                                       |             2
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  60 | Darcy         | libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut                                          |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      |  65 | Fiona         | ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim                                           |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |   9 | Daryl         | pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea                                                   |             5
+(22 rows)
+
+
+SELECT *
+FROM Magasin
+INNER JOIN Pharmacien ON Magasin.id = Pharmacien.id_magasin;
+
+id |      nom      |     description      | id_medicament | id |    nom     |                                                                adresse                                                      
+           | id_magasin 
+----+---------------+----------------------+---------------+----+------------+-----------------------------------------------------------------------------------------------------------------------------
+-----------+------------
+  1 | la belle lune | ouvert a tout public |             2 | 57 | Cecil      | ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien
+ in sapien |          1
+  1 | la belle lune | ouvert a tout public |             2 | 33 | Samantha   | leo odio porttitor id consequat in consequat ut nulla sed accumsan felis                                                    
+           |          1
+  1 | la belle lune | ouvert a tout public |             2 | 35 | Arleta     | nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque                                                  
+           |          1
+  1 | la belle lune | ouvert a tout public |             2 | 30 | Evangelina | mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo     
+           |          1
+  1 | la belle lune | ouvert a tout public |             2 | 49 | Tannie     | lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere                                      |          1
+  1 | la belle lune | ouvert a tout public |             2 |  8 | Arlie      | volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus                                                            |          1
+  2 | univers       | ouvert a tout public |             3 | 78 | Moss       | ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit                  |          2
+  2 | univers       | ouvert a tout public |             3 | 26 | Izabel     | odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel                                        |          2
+  2 | univers       | ouvert a tout public |             3 | 15 | Lewes      | rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non                                     |          2
+  2 | univers       | ouvert a tout public |             3 | 77 | Enrica     | primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio                                |          2
+  2 | univers       | ouvert a tout public |             3 | 91 | Nevins     | nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at                             |          2
+  2 | univers       | ouvert a tout public |             3 | 81 | Neddie     | nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt                                                            |          2
+  2 | univers       | ouvert a tout public |             3 |  3 | malick     | quartier farcha                                                                                                                        |          2
+  2 | univers       | ouvert a tout public |             3 |  1 | vanessa    | quartier goudji                                                                                                                        |          2
+  3 | la belle lune | ouvert a tout public |             4 | 28 | Saidee     | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit                      |          3
+  3 | la belle lune | ouvert a tout public |             4 | 31 | Ker        | lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc                                        |          3
+  3 | la belle lune | ouvert a tout public |             4 | 42 | Shepard    | cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna                                         |          3
+  3 | la belle lune | ouvert a tout public |             4 | 40 | Babita     | tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non                                               |          3
+  3 | la belle lune | ouvert a tout public |             4 | 92 | Von        | fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum                                                                  |          3
+  3 | la belle lune | ouvert a tout public |             4 | 98 | Livvie     | aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue                                                             |          3
+  3 | la belle lune | ouvert a tout public |             4 | 75 | Rose       | quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id                                                                 |          3
+  3 | la belle lune | ouvert a tout public |             4 |  6 | Ninetta    | nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam                    |          3
+  3 | la belle lune | ouvert a tout public |             4 |  5 | abdel      | quartier mardjandafak                                                                                                                  |          3
+  3 | la belle lune | ouvert a tout public |             4 |  2 | silvie     | quartier dembe                                                                                                                         |          3
+  4 | la belle lune | ouvert 24h/24        |             5 | 59 | Barde      | mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum        |          4
+
+
+               LEFT JOIN
+               
+SELECT *
+FROM Medicaments
+LEFT JOIN Magasin ON Medicaments.id = Magasin.id_medicament;      jointure externe pour la table a gauche   avec intersection
+
+ id |    nom     |                                                               type                                                                | date_peremption | id  |      nom      |             
+                                                   description                                                                | id_medicament 
+----+------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------+-----+---------------+-------------
+------------------------------------------------------------------------------------------------------------------------------+---------------
+  2 | doliprane  | medicament pour les douleurs et la fievre                                                                                         | 2022-09-09      |   1 | la belle lune | ouvert a tou
+t public                                                                                                                      |             2
+  3 | cofantrine | medicament pour le palu                                                                                                           | 2022-12-09      |   2 | univers       | ouvert a tou
+t public                                                                                                                      |             3
+  4 | otipax     | medicament pour le traitement orl                                                                                                 | 2022-12-09      |   3 | la belle lune | ouvert a tou
+t public                                                                                                                      |             4
+  5 | gaviscon   | medicament pour le traitement gastrique                                                                                           | 2022-12-09      |   4 | la belle lune | ouvert 24h/2
+4                                                                                                                             |             5
+  3 | cofantrine | medicament pour le palu                                                                                                           | 2022-12-09      |  14 | Gilemette     | lobortis lig
+ula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at                                    |             3
+  4 | otipax     | medicament pour le traitement orl                                                                                                 | 2022-12-09      |  96 | Trev          | id sapien in
+ sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque    |             4
+  5 | gaviscon   | medicament pour le traitement gastrique                                                                                           | 2022-12-09      |  88 | Cornelle      | hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum    |             5
+  2 | doliprane  | medicament pour les douleurs et la fievre                                                                                         | 2022-09-09      |  59 | Ninnette      | a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie                               |             2
+  5 | gaviscon   | medicament pour le traitement gastrique                                                                                           | 2022-12-09      |  25 | Lotti         | ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam                                                           |             5
+  3 | cofantrine | medicament pour le palu                                                                                                           | 2022-12-09      |  18 | Kendra        | primis in faucibus orci luctus et ultrices posuere cubilia curae                                                                          |             3
+  2 | doliprane  | medicament pour les douleurs et la fievre                                                                                         | 2022-09-09      |  29 | Wheeler       | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat            |             2
+  1 | fervex     | medicament por le rhume                                                                                                           | 2022-01-09      |  32 | Valenka       | consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat                                          |             1
+  1 | fervex     | medicament por le rhume                                                                                                           | 2022-01-09      |  19 | Ailis         | pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate             |             1
+  2 | doliprane  | medicament pour les douleurs et la fievre                                                                                         | 2022-09-09      |  43 | Gaylord       | nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices                                      |             2
+  3 | cofantrine | medicament pour le palu                                                                                                           | 2022-12-09      |  45 | Duky          | justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam                   |             3
+  4 | otipax     | medicament pour le traitement orl                                                                                                 | 2022-12-09      | 100 | Cristi        | lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede                                                 |             4
+  5 | gaviscon   | medicament pour le traitement gastrique                                                                                           | 2022-12-09      |  38 | Thorin        | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum |             5
+  5 | gaviscon   | medicament pour le traitement gastrique                                                                                           | 2022-12-09      |  74 | Clair         | lorem quisque ut erat curabitur gravida nisi at nibh in hac                                                                               |             5
+  2 | doliprane  | medicament pour les douleurs et la fievre                                                                                         | 2022-09-09      |  46 | Prentiss      | at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam                                       |             2
+  3 | cofantrine | medicament pour le palu                                                                                                           | 2022-12-09      |  60 | Darcy         | libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut                                          |             3
+  4 | otipax     | medicament pour le traitement orl                                                                                                 | 2022-12-09      |  65 | Fiona         | ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim                                           |             4
+  5 | gaviscon   | medicament pour le traitement gastrique                                                                                           | 2022-12-09      |   9 | Daryl         | pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea                                                   |             5
+ 82 | Magdaia    | sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis                  | 2022-10-05      |     |               |                                                                                                                                           |              
+ 27 | Yale       | turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque | 2022-10-05      |     |               |                                                                                                                                           |              
+ 11 | Hillie     | mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy                                     | 2022-10-05      |     |               |                                                                                                                        
+
+SELECT *
+FROM Medicaments
+RIGHT JOIN Magasin ON Medicaments.id = Magasin.id_medicament;    jointure externe pour la table a droite
+
+
+
+
+ id |    nom     |                   type                    | date_peremption | id  |      nom      |                                                                description                                                                | id_medicament 
+----+------------+-------------------------------------------+-----------------+-----+---------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------------
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |   1 | la belle lune | ouvert a tout public                                                                                                                      |             2
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |   2 | univers       | ouvert a tout public                                                                                                                      |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      |   3 | la belle lune | ouvert a tout public                                                                                                                      |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |   4 | la belle lune | ouvert 24h/24                                                                                                                             |             5
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  14 | Gilemette     | lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at                                    |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      |  96 | Trev          | id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque    |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  88 | Cornelle      | hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum    |             5
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  59 | Ninnette      | a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie                               |             2
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  25 | Lotti         | ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam                                                           |             5
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  18 | Kendra        | primis in faucibus orci luctus et ultrices posuere cubilia curae                                                                          |             3
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  29 | Wheeler       | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat            |             2
+  1 | fervex     | medicament por le rhume                   | 2022-01-09      |  32 | Valenka       | consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat                                          |             1
+  1 | fervex     | medicament por le rhume                   | 2022-01-09      |  19 | Ailis         | pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate             |             1
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  43 | Gaylord       | nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices                                      |             2
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  45 | Duky          | justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam                   |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      | 100 | Cristi        | lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede                                                 |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  38 | Thorin        | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum |             5
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |  74 | Clair         | lorem quisque ut erat curabitur gravida nisi at nibh in hac                                                                               |             5
+  2 | doliprane  | medicament pour les douleurs et la fievre | 2022-09-09      |  46 | Prentiss      | at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam                                       |             2
+  3 | cofantrine | medicament pour le palu                   | 2022-12-09      |  60 | Darcy         | libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut                                          |             3
+  4 | otipax     | medicament pour le traitement orl         | 2022-12-09      |  65 | Fiona         | ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim                                           |             4
+  5 | gaviscon   | medicament pour le traitement gastrique   | 2022-12-09      |   9 | Daryl         | pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea                                                   |             5
+(22 rows)
+
+
+
+SELECT *
+FROM Medicaments
+LEFT JOIN Magasin ON Medicaments.id = Magasin.id_medicament
+WHERE Magasin.id_medicament IS NULL;                       sans intersection
+
+ id |   nom   |                                                               type                                                                | date_peremption | id | nom | description | id_medicament 
+----+---------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------+----+-----+-------------+---------------
+ 33 | Ham     | convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum                            | 2022-10-05      |    |     |             |              
+ 27 | Yale    | turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque | 2022-10-05      |    |     |             |              
+ 22 | Berri   | rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam                                                      | 2022-10-05      |    |     |             |              
+ 64 | Pedro   | sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus                                                   | 2022-10-05      |    |     |             |              
+ 71 | Tommy   | ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non                                     | 2022-10-05      |    |     |             |              
+ 57 | Angie   | arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec                             | 2022-10-05      |    |     |             |              
+ 88 | Bonita  | turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam                                  | 2022-10-05      |    |     |             |              
+ 56 | Lanette | duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in  | 2022-10-05      |    |     |             |              
+ 11 | Hillie  | mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy                                     | 2022-10-05      |    |     |             |              
+ 82 | Magdaia | sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis                  | 2022-10-05      |    |     |             |              
+
+
+
+
+             RIGHT JOIN
+             
+SELECT *
+FROM Magasin
+RIGHT JOIN Pharmacien ON Magasin.id = Pharmacien.id_magasin;          avec intersection des deux tables
+
+ id |      nom      |     description      | id_medicament | id |    nom     |                                                                adresse                                                      
+           | id_magasin 
+----+---------------+----------------------+---------------+----+------------+-----------------------------------------------------------------------------------------------------------------------------
+-----------+------------
+  1 | la belle lune | ouvert a tout public |             2 | 57 | Cecil      | ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien
+ in sapien |          1
+  1 | la belle lune | ouvert a tout public |             2 | 33 | Samantha   | leo odio porttitor id consequat in consequat ut nulla sed accumsan felis                                                    
+           |          1
+  1 | la belle lune | ouvert a tout public |             2 | 35 | Arleta     | nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque                                                  
+           |          1
+  1 | la belle lune | ouvert a tout public |             2 | 30 | Evangelina | mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo     
+           |          1
+  1 | la belle lune | ouvert a tout public |             2 | 49 | Tannie     | lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere                                      |          1
+  1 | la belle lune | ouvert a tout public |             2 |  8 | Arlie      | volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus                                                            |          1
+  2 | univers       | ouvert a tout public |             3 | 78 | Moss       | ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit                  |          2
+  2 | univers       | ouvert a tout public |             3 | 26 | Izabel     | odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel                                        |          2
+  2 | univers       | ouvert a tout public |             3 | 15 | Lewes      | rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non                                     |          2
+  2 | univers       | ouvert a tout public |             3 | 77 | Enrica     | primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio                                |          2
+  2 | univers       | ouvert a tout public |             3 | 91 | Nevins     | nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at                             |          2
+  2 | univers       | ouvert a tout public |             3 | 81 | Neddie     | nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt                                                            |          2
+  2 | univers       | ouvert a tout public |             3 |  3 | malick     | quartier farcha                                                                                                                        |          2
+  2 | univers       | ouvert a tout public |             3 |  1 | vanessa    | quartier goudji                                                                                                                        |          2
+  3 | la belle lune | ouvert a tout public |             4 | 28 | Saidee     | augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit                      |          3
+  3 | la belle lune | ouvert a tout public |             4 | 31 | Ker        | lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc                                        |          3
+  3 | la belle lune | ouvert a tout public |             4 | 42 | Shepard    | cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna                                         |          3
+  3 | la belle lune | ouvert a tout public |             4 | 40 | Babita     | tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non                                               |          3
+  3 | la belle lune | ouvert a tout public |             4 | 92 | Von        | fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum                                                                  |          3
+  3 | la belle lune | ouvert a tout public |             4 | 98 | Livvie     | aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue                                                             |          3
+  3 | la belle lune | ouvert a tout public |             4 | 75 | Rose       | quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id                                                                 |          3
+  3 | la belle lune | ouvert a tout public |             4 |  6 | Ninetta    | nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam                    |          3
+  3 | la belle lune | ouvert a tout public |             4 |  5 | abdel      | quartier mardjandafak                                                                                                                  |          3
+  3 | la belle lune | ouvert a tout public |             4 |  2 | silvie     | quartier dembe                                                                                                                         |          3
+  4 | la belle lune | ouvert 24h/24        |             5 | 59 | Barde      | mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum        |          4
+
+
